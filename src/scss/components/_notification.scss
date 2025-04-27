@@ -1,0 +1,16 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.notification {
+    flex-shrink: 0;
+  display: block;
+  background-color: fn.get-colors('danger');
+  color: fn.get-colors('light');
+  min-width: 28px;
+  height: 20px;
+  padding: 0 10px;
+  border-radius: 12px;
+  justify-content: center;
+}

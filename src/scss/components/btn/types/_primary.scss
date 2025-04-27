@@ -1,0 +1,26 @@
+// Цей файл визначає стилі для конкретного типу кнопки
+// (у цьому випадку для кнопки з класом .btn--primary).
+// Тут задаються стилі, специфічні для кожного варіанту кнопки.
+@use '../../../utils/functions' as fn;
+
+@if index($btn-types, primary) {
+  .btn--primary {
+    background-color: fn.get-colors('accent-primary');
+
+    &:active {
+      background-color: fn.get-colors('accent-tertiary');
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: fn.get-colors('accent-secondary');
+        box-shadow: 0 4px 10px 0 rgba(240, 127, 46, 0.25);
+      }
+    }
+
+    &[disabled] {
+      background-color: fn.get-colors('light-secondary');
+    }
+  }
+}

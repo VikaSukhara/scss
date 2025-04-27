@@ -1,0 +1,23 @@
+@use '../../../utils/functions' as fn;
+
+@if index($btn-types, danger) {
+  .btn--frame {
+    background-color: fn.get-colors('transparent');
+    border: 1px solid fn.get-colors('accent-tertiary');
+
+    &:active {
+      border-color: darken(fn.get-colors('accent-tertiary'), 10%);
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        border-color: lighten(fn.get-colors('accent-tertiary'), 10%);
+      }
+    }
+
+    &[disabled] {
+      background-color: fn.get-colors('light-secondary');
+    }
+  }
+}

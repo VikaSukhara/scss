@@ -1,0 +1,43 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.menu-btn {
+  @extend %details;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-right: auto; // Встановлює автоматичне відступлення з правого боку,
+
+  color: fn.get-colors('light-primary');
+
+  @include mx.mq('lg') { // коли екран більше 1200 - встановлюється display: none
+    display: none;
+  }
+
+  //стиль буде застосовано до елемента .menu-btn, 
+  //якщо він знаходиться всередині елемента з класом .sidebar.
+  .sidebar & {
+    @include mx.ease('slow', opacity, transform);
+
+    position: absolute;
+    top: 16px;
+    right: -36px;
+
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+
+  .sidebar.is-open & {
+    transition-delay: 0.8s;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.menu-btn-icon {
+  fill: fn.get-colors('current');
+}

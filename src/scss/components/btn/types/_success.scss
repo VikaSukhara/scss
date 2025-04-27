@@ -1,0 +1,22 @@
+@use '../../../utils/functions' as fn;
+
+@if index($btn-types, danger) {
+  .btn--success {
+    background-color: fn.get-colors('success');
+
+    &:active {
+      background-color: darken(fn.get-colors('success'), 10%);
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: lighten(fn.get-colors('success'), 10%);
+      }
+    }
+
+    &[disabled] {
+      background-color: fn.get-colors('light-secondary');
+    }
+  }
+}
