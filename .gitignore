@@ -7,8 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+
+# Ігноруємо всю папку dist, але дозволяємо конкретний файл index.css
+dist/*
+!dist/assets/index.css
+
+
+
 node_modules
-dist
 dist-ssr
 *.local
 
