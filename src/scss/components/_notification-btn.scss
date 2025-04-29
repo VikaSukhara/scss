@@ -1,0 +1,39 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.notification-btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 20px;
+  min-height: 20px;
+  margin-left: 24px;
+
+  color: fn.get-colors('light-tertiary');
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+    border-radius: 50px;
+    width: 8px;
+    height: 8px;
+    background-color: fn.get-colors('accent-primary');
+  }
+
+  &[data-notify='true']::after {
+    background-color: fn.get-colors('danger');
+  }
+}
+
+.notification-btn-icon {
+  fill: fn.get-colors('current');
+}

@@ -1,0 +1,68 @@
+@use '../../utils/placeholders';
+@use '../../utils/variables' as var;
+@use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.board-item {
+  @extend %section-frame;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 43px;
+
+  background-color: fn.get-colors('dark-tertiary');
+
+  @include mx.mq('xl') {
+    background-color: fn.get-colors('dark-secondary');
+  }
+  &.hide {
+    display: none;
+  }
+}
+
+.board-caption {
+  @extend %accent-text;
+  color: fn.get-colors('light-primary');
+  margin-bottom: 8px;
+}
+.board-details {
+  @extend %details;
+
+  color: fn.get-colors('light-secondary');
+  margin-bottom: 20px;
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.person-thumb {
+  @include mx.frame(24px, $is-circle: true);
+}
+.person-avatar {
+  @include mx.frame(24px, $is-circle: true);
+}
+.person-caption {
+  @extend %details;
+
+  //   color: fn.get-colors('light-secondary');
+}
+.board-right {
+  display: flex;
+  flex-direction: column;
+  //   justify-content: space-between;
+  //   text-align: right;
+  min-height: 100%;
+}
+.board-tag {
+  @extend %details;
+
+  margin-bottom: auto;
+  text-align: right;
+  color: fn.get-colors('light-secondary');
+}

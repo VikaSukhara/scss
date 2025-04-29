@@ -1,0 +1,83 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.search-field {
+  @include mx.ease('fast', width, color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  color: fn.get-colors('light-tertiary');
+  overflow: hidden;
+
+  @include mx.mq('lg', 'max') {
+    width: 30px;
+
+    &:focus-within {
+      width: 200px;
+    }
+  }
+
+  @include mx.mq('lg') {
+    margin-right: auto;
+  }
+
+  &:focus-within .search-icon {
+    fill: fn.get-colors('light-primary');
+  }
+
+  // .search-field:focus-within .search-icon {
+  //     fill: fn.get-colors('light-primary');
+  //   }
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+
+  flex-shrink: 0;
+  fill: fn.get-colors('light-tertiary');
+  width: 20px;
+  height: 20px;
+  margin-right: 25px;
+
+  @include mx.mq('lg') {
+    // Змінюємо відстань між іконкою та інпутом на десктопі
+    margin-right: 15px; // Встановлюємо меншу відстань між лупою та інпутом
+  }
+}
+
+.search-input {
+  padding-left: 30px;
+
+  @extend %details;
+  min-width: 165px;
+  min-height: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: fn.get-colors('light-tertiary');
+
+  &:focus {
+    color: fn.get-colors('light-primary');
+  }
+
+  @include mx.mq('lg', 'max') {
+    @include mx.ease('fast', opacity);
+
+    opacity: 0;
+    &:focus {
+      opacity: 1;
+      transition-delay: 400ms;
+    }
+  }
+
+  @include mx.mq('lg') {
+    margin-left: 12px; // Додано для зміни відстані між іконкою та інпутом
+  }
+}

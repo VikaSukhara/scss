@@ -6,6 +6,7 @@
 .main {
   display: grid;
   gap: 40px;
+  padding: 16px;
   grid-template-areas:
     'welcome'
     'co-workers'
