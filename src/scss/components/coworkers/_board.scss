@@ -3,6 +3,7 @@
 @use '../../utils/functions' as fn;
 @use '../../utils/mixins' as mx;
 
+
 .board {
   display: flex;
   flex-wrap: wrap;
