@@ -1,28 +1,130 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+$reports-status: (
+  'success': 'up',
+  'warning': 'dash',
+  'danger': 'down',
+);
+
 .reports {
+  @extend %section-frame;
+
   grid-area: reports;
+
+  min-width: 340px;
+  background-color: fn.get-colors('dark-tertiary');
 }
 .reports-title {
+  @extend %details;
+  margin-bottom: 28px;
+
+  span {
+    @extend %accent-text;
+    color: fn.get-colors('light');
+  }
 }
 .reports-list {
 }
 .reports-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include mx.mq('md') {
+    gap: 32px;
+  }
+  &:not(:last-child) {
+    margin-bottom: 28px;
+  }
 }
-.reports-co-worker {
+
+.reports-staff {
+  flex-grow: 1;
+  flex-shrink: 0;
 }
-.co-worker {
+.staff {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.co-worker-thumb {
+.staff-thumb {
+  @include mx.frame(32px, $is-circle: true);
 }
-.co-worker-avatar {
+.staff-caption {
+  @extend %details;
 }
-.co-worker-caption {
-}
+
 .reports-bar {
+  width: calc(100% - 224px); // 100$ - width of li(356px)
+  height: 4px;
+
+  &[value] {
+    // when reports-bar has attribute 'value'
+    border-radius: 2px;
+  }
+
+  @each $key, $value in $reports-status {
+    // if LI has [data-status='#{$value} -> reports-bar has next styles:
+
+    [data-status='#{$value}'] & {
+      // & refers to  reports-bar
+
+      // 	Елемент progress for all browsers
+      &[value] {
+        background-color: rgba(fn.get-colors($key), 0.3);
+      }
+      // Firefox - Залита частина
+      &::-mor-progress-bar {
+        background-color: rgba(fn.get-colors($key), 1);
+      }
+      // Chrome/Safari/Opera. - Фон прогрес-бара
+      &::-webkit-progress-bar {
+        background-color: rgba(fn.get-colors($key), 0.3);
+        border-radius: 2px;
+      }
+      // Chrome/Safari/Opera. - Залита частина
+      &::-webkit-progress-value {
+        background-color: rgba(fn.get-colors($key), 1);
+        border-radius: 2px;
+      }
+    }
+  }
 }
+
 .progress-bar {
 }
-.reports-status {
+
+.reports-icons {
+  flex-shrink: 0;
+
+  border-radius: 4px;
+  padding: 4px;
+  width: 20px;
+  height: 20px;
+
+  use {
+    opacity: 0;
+    fill: fn.get-colors('light');
+  }
+
+  @each $key, $value in $reports-status {
+    // if li has [data-status='#{$value}']
+    [data-status='#{$value}'] & {
+
+      // so reports-icons has:
+      background-color: fn.get-colors($key);
+
+      // <use> with this class
+      .#{$value} {
+        opacity: 1;
+      }
+    }
+  }
 }
+
 .up {
 }
 .dash {

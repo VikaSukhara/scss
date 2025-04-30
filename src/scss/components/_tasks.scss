@@ -1,27 +1,125 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
 .tasks {
-    grid-area: tasks;
+  @extend %section-frame;
+
+  //section-frame; ===  padding: 16px;   border-radius: 12px;
+
+  grid-area: tasks;
+  min-width: 340px;
+  min-height: 420px;
+
+  background: fn.get-colors('dark-tertiary');
 }
 .tasks-title {
+  @extend %details;
+  margin-bottom: 36 px;
+
+  span {
+    @extend %accent-text;
+    color: fn.get-colors('light');
+  }
 }
 .tasks-list {
+  @include mx.scroll-bar;
+
+  max-height: 288px;
+  overflow-y: auto;
+
+  // min-width: 1200px
+  @include mx.mq('lg') {
+    margin-right: -14px;
+  }
 }
 .tasks-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px 8px;
+  //   justify-content: space-between;
+  // position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    background-color: fn.get-colors('light');
+    height: 1px;
+    z-index: 100;
+  }
 }
 .tasks-checkbox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
-.tasks-input {
-}
+
 .visually-hidden {
 }
 .tasks-checkbox-icon {
+  @include mx.ease('fast', fill, background-color, border-color);
+
+  //  Початковий стан
+  fill: fn.get-colors('transparent');
+  border: 1px solid;
+  border-color: fn.get-colors('light-tertiary');
+  border-radius: 4px;
+
+  // Коли інпут позначено (checked)
+  // + означає сестринський елемент одразу після інпута
+  // тобто: input → одразу після нього йде .tasks-checkbox-icon 
+
+  .tasks-input:checked + & {
+    fill: fn.get-colors('light-primary');
+    background-color: fn.get-colors('accent-primary');
+    border-color: fn.get-colors('light-tertiary');
+  }
+  .tasks-input:focus-visible + & {
+    outline: 2px solid;
+    outline-color: fn.get-colors('light-tertiary');
+    outline-offset: 2px;
+  }
 }
+
 .tasks-info {
+  flex-grow: 1;
 }
 .tasks-heading {
+  @extend %details;
+
+  color: fn.get-colors('light');
 }
 .tasks-desc {
+  @extend %details;
 }
 .tasks-btn {
+  fill: fn.get-colors('light-tertiary');
 }
 .tasks-btn-icon {
+  @include mx.ease('fast', outline);
+  width: 20px;
+  height: 20px;
+  color: fn.get-colors('light-tertiary');
+  border-radius: 50%;
+
+  &:focus-visible {
+    outline: 2px solid;
+    outline-color: rgba(fn.get-colors('light-tertiary'), 0.6);
+    outline-offset: 3px;
+  }
+
+  &-icon {
+    fill: fn.get-colors('.current');
+  }
 }
