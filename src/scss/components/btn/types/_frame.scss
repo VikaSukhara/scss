@@ -3,7 +3,8 @@
 @if index($btn-types, danger) {
   .btn--frame {
     background-color: fn.get-colors('transparent');
-    border: 1px solid fn.get-colors('accent-tertiary');
+    border: 1px solid;
+    border-color: fn.get-colors('accent-tertiary');
 
     &:active {
       border-color: darken(fn.get-colors('accent-tertiary'), 10%);

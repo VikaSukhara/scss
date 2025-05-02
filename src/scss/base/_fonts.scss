@@ -2,17 +2,11 @@
 
 $fonts: var.$font-weights;
 
-// $font-weights: (
-//   'Regular': 400,
-//   'Medium': 500,
-//   'SemiBold': 600,
-//   'Bold': 700,
-// );
 @each $key, $value in $fonts {
   @font-face {
     font-family: 'Montserrat';
-    src: url('../font/Montserrat-#{$key}.woff2') format('woff2'),
-      url('../font/Montserrat-#{$key}.woff') format('woff');
+    src: url('../fonts/Montserrat-#{$key}.woff2') format('woff2'),
+      url('../fonts/Montserrat-#{$key}.woff') format('woff');
     font-weight: $value;
     font-style: normal;
     font-display: swap;

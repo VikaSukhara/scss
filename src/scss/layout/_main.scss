@@ -12,6 +12,7 @@
     'co-workers'
     'tasks'
     'reports';
+  background-color: fn.get-colors('dark');
 
   @include mx.mq('md') {
     gap: 36px;

@@ -33,3 +33,47 @@ window.matchMedia('(min-width: 1200px)').addEventListener('change', event => {
   refsMenu.openMenuBtn.setAttribute('aria-expanded', false);
   bodyScrollLock.enableBodyScroll(document.body);
 });
+
+const menuItems = document.querySelectorAll('.menu-item a');
+
+// Отримуємо поточний URL сторінки
+const currentURL = window.location.pathname;  
+
+// Функція для очищення шляху
+const normalizeURL = url =>
+  url
+    .replace(/^\.?\//, '/') // ./ або / → /
+    .replace(/\/$/, '');
+
+
+const normalizedCurrentURL = normalizeURL(currentURL);
+
+// Перебираємо всі пункти меню та перевіряємо, чи співпадає їх URL з поточним
+menuItems.forEach(item => {
+  const itemURL = item.getAttribute('href'); // ./index.html
+
+  // Пропускаємо елементи з порожнім href
+  if (!itemURL) {
+    item.addEventListener('click', e => e.preventDefault());
+    return;
+  }
+
+  const normalizedItemURL = normalizeURL(itemURL);
+
+  // Перевіряємо, чи співпадає URL або чи містить поточний URL частину href
+  if (
+    normalizedCurrentURL === normalizedItemURL
+  ) {
+    item.classList.add('current'); // Додаємо клас 'current' до активного пункту меню
+  } else {
+    item.classList.remove('current'); // Видаляємо клас 'current' з інших пунктів
+  }
+});
+
+// Додаємо обробник події для кожного елемента меню
+menuItems.forEach(item => {
+  item.addEventListener('click', function () {
+    menuItems.forEach(link => link.classList.remove('current')); // Видаляємо клас 'current' з усіх елементів
+    item.classList.add('current'); // Додаємо клас 'current' до поточного елементу
+  });
+});
