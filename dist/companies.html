@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/starter-kit/sass.svg" />
+
+    <link rel="stylesheet" href="./assets/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <script
+      type="module"
+      crossorigin
+      src="/starter-kit/assets/main-604c7819.js"></script>
+    <link rel="stylesheet" href="/starter-kit/assets/main.css" />
+  </head>
+  <body class="page">
+    <aside class="sidebar js-menu" id="sidebar-menu">
+      <nav class="menu">
+        <button
+          class="menu-btn js-menu-close"
+          type="button"
+          aria-label="Close menu">
+          <svg class="menu-btn-icon" width="20" height="20">
+            <use href="/starter-kit/assets/icons.svg#icon-x-close"></use>
+          </svg>
+        </button>
+
+        <a class="logo" href="./index.html">
+          <svg class="logo-icon" width="24" height="24">
+            <use href="/starter-kit/assets/icons.svg#icon-logo"></use>
+          </svg>
+          Cat CRM
+        </a>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a class="menu-link current" href="./index.html">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-columns"></use>
+              </svg>
+              Overview
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use
+                  href="/starter-kit/assets/icons.svg#menu-person-plus"></use>
+              </svg>
+              Contacts
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="./companies.html">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-briefcase"></use>
+              </svg>
+              Companies
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-coin"></use>
+              </svg>
+              Deals
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-clipboard"></use>
+              </svg>
+              Document
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-envelope"></use>
+              </svg>
+              Mesage
+              <span class="menu-notification notification">8</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-calendar"></use>
+              </svg>
+              Calendar
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="/starter-kit/assets/icons.svg#menu-journal"></use>
+              </svg>
+              Report
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <header class="header">
+      <button
+        class="menu-btn js-menu-open"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sidebar-menu">
+        <svg class="menu-btn-icon" width="24" height="24">
+          <use href="/starter-kit/assets/icons.svg#icon-menu"></use>
+        </svg>
+        Overview
+      </button>
+      <label class="search-field">
+        <svg class="search-icon" width="20" height="20">
+          <use href="/starter-kit/assets/icons.svg#icon-search"></use>
+        </svg>
+        <input
+          class="search-input"
+          type="search"
+          name="user_search"
+          placeholder="Search Something..."
+          aria-label="Search for any term" />
+      </label>
+      <button
+        class="notification-btn"
+        type="button"
+        data-notify="true"
+        aria-label="Bell button">
+        <svg class="notification-btn-icon" width="20" height="20">
+          <use href="/starter-kit/assets/icons.svg#icon-bell"></use>
+        </svg>
+      </button>
+    </header>
+
+    <main class="companies-main">
+      <section class="companies-section container">
+        <h1 class="companies-title">
+          Companies
+
+          <span class="companies-description">
+            Here you can see the list of our companion companies
+          </span>
+        </h1>
+
+        <ul class="companies-list">
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">SysGears</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Kyiv, Ukraine
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg class="company-logo icon-logo" width="40" height="40">
+              <use href="/starter-kit/assets/icons.svg#icon-sass"></use>
+            </svg>
+          </li>
+
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">Boosters</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Miami, USA
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg class="company-logo icon-logo" width="40" height="40">
+              <use href="/starter-kit/assets/icons.svg#icon-healthicons"></use>
+            </svg>
+          </li>
+
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">Symphatico</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Kyiv, Ukraine
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg class="company-logo icon-logo" width="40" height="40">
+              <use href="/starter-kit/assets/icons.svg#icon-meta"></use>
+            </svg>
+          </li>
+
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">Carters&Co</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Miami, USA
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg class="company-logo icon-logo" width="40" height="40">
+              <use href="/starter-kit/assets/icons.svg#icon-corporal"></use>
+            </svg>
+          </li>
+
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">Crystallise</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Kyiv, Ukraine
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg
+              width="52"
+              height="52"
+              viewBox="0 0 52 52"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M45.8095 19.8095L38.3809 9.90475H13.6413L6.19043 19.8095M45.8095 19.8095L26 44.5714M45.8095 19.8095H6.19043M26 44.5714L6.19043 19.8095M26 44.5714L18.5714 19.8095M26 44.5714L33.4285 19.8095"
+                stroke="white"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M13.6411 9.90475L18.5712 19.8095L25.9998 9.90475L33.4284 19.8095L38.3807 9.90475"
+                stroke="white"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+
+          <li class="company-card">
+            <div class="company-left-side">
+              <h2 class="company-name">Synergetic</h2>
+              <p class="company-location">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10 20C10 20 17.5 12.8925 17.5 7.5C17.5 5.51088 16.7098 3.60322 15.3033 2.1967C13.8968 0.790176 11.9891 0 10 0C8.01088 0 6.10322 0.790176 4.6967 2.1967C3.29018 3.60322 2.5 5.51088 2.5 7.5C2.5 12.8925 10 20 10 20ZM10 11.25C9.00544 11.25 8.05161 10.8549 7.34835 10.1517C6.64509 9.44839 6.25 8.49456 6.25 7.5C6.25 6.50544 6.64509 5.55161 7.34835 4.84835C8.05161 4.14509 9.00544 3.75 10 3.75C10.9946 3.75 11.9484 4.14509 12.6517 4.84835C13.3549 5.55161 13.75 6.50544 13.75 7.5C13.75 8.49456 13.3549 9.44839 12.6517 10.1517C11.9484 10.8549 10.9946 11.25 10 11.25Z"
+                    fill="#82C43C" />
+                </svg>
+
+                Kyiv, Ukraine
+              </p>
+              <button class="btn--frame btn companies-btn">Discover</button>
+            </div>
+            <svg class="company-logo icon-logo" width="40" height="40">
+              <use href="/starter-kit/assets/icons.svg#icon-thunder"></use>
+            </svg>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
