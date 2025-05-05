@@ -10,10 +10,10 @@ lerna-debug.log*
 
 # Ігноруємо всю папку dist, але дозволяємо конкретний файл index.css
 dist/*
-!dist/assets/main.css
-!dist/assets/main-604c7819.js
-
-
+!dist/assets/
+!dist/assets/**
+!dist/fonts/
+!dist/fonts/**
 
 node_modules
 dist-ssr
